@@ -1,0 +1,3 @@
+/mnt/c/prayash/Algorithms/builds/CMakeFiles/Algorithms.dir
+/mnt/c/prayash/Algorithms/builds/CMakeFiles/edit_cache.dir
+/mnt/c/prayash/Algorithms/builds/CMakeFiles/rebuild_cache.dir

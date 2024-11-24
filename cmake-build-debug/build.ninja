@@ -41,52 +41,20 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/prayash/Algorithms/cmake-build-debug/
 # =============================================================================
-# Object build statements for STATIC_LIBRARY target Peer
-
-
-#############################################
-# Order-only phony target for Peer
-
-build cmake_object_order_depends_target_Peer: phony || .
-
-build CMakeFiles/Peer.dir/Services/AsioPeer.cpp.obj: CXX_COMPILER__Peer_unscanned_Debug C$:/prayash/Algorithms/Services/AsioPeer.cpp || cmake_object_order_depends_target_Peer
-  DEP_FILE = CMakeFiles\Peer.dir\Services\AsioPeer.cpp.obj.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
-  INCLUDES = -IC:/prayash/Algorithms/./dependencies/asio-1.30.2/include
-  OBJECT_DIR = CMakeFiles\Peer.dir
-  OBJECT_FILE_DIR = CMakeFiles\Peer.dir\Services
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target Peer
-
-
-#############################################
-# Link the static library libPeer.a
-
-build libPeer.a: CXX_STATIC_LIBRARY_LINKER__Peer_Debug CMakeFiles/Peer.dir/Services/AsioPeer.cpp.obj
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = CMakeFiles\Peer.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = libPeer.a
-  TARGET_PDB = Peer.a.dbg
-
-# =============================================================================
 # Object build statements for EXECUTABLE target Algorithms
 
 
 #############################################
 # Order-only phony target for Algorithms
 
-build cmake_object_order_depends_target_Algorithms: phony || cmake_object_order_depends_target_Peer
+build cmake_object_order_depends_target_Algorithms: phony || .
 
-build CMakeFiles/Algorithms.dir/Main.cpp.obj: CXX_COMPILER__Algorithms_unscanned_Debug C$:/prayash/Algorithms/Main.cpp || cmake_object_order_depends_target_Algorithms
-  DEP_FILE = CMakeFiles\Algorithms.dir\Main.cpp.obj.d
+build CMakeFiles/Algorithms.dir/Services/AsioPeer.cpp.obj: CXX_COMPILER__Algorithms_unscanned_Debug C$:/prayash/Algorithms/Services/AsioPeer.cpp || cmake_object_order_depends_target_Algorithms
+  DEP_FILE = CMakeFiles\Algorithms.dir\Services\AsioPeer.cpp.obj.d
   FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
   INCLUDES = -IC:/prayash/Algorithms/./dependencies/asio-1.30.2/include
   OBJECT_DIR = CMakeFiles\Algorithms.dir
-  OBJECT_FILE_DIR = CMakeFiles\Algorithms.dir
+  OBJECT_FILE_DIR = CMakeFiles\Algorithms.dir\Services
 
 
 # =============================================================================
@@ -96,9 +64,9 @@ build CMakeFiles/Algorithms.dir/Main.cpp.obj: CXX_COMPILER__Algorithms_unscanned
 #############################################
 # Link the executable Algorithms.exe
 
-build Algorithms.exe: CXX_EXECUTABLE_LINKER__Algorithms_Debug CMakeFiles/Algorithms.dir/Main.cpp.obj | libPeer.a || libPeer.a
+build Algorithms.exe: CXX_EXECUTABLE_LINKER__Algorithms_Debug CMakeFiles/Algorithms.dir/Services/AsioPeer.cpp.obj
   FLAGS = -g
-  LINK_LIBRARIES = libPeer.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Algorithms.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -134,8 +102,6 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build Algorithms: phony Algorithms.exe
 
-build Peer: phony libPeer.a
-
 # =============================================================================
 # Folder targets.
 
@@ -144,7 +110,7 @@ build Peer: phony libPeer.a
 #############################################
 # Folder: C:/prayash/Algorithms/cmake-build-debug
 
-build all: phony libPeer.a Algorithms.exe
+build all: phony Algorithms.exe
 
 # =============================================================================
 # Built-in targets
